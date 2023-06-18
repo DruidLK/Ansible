@@ -1,0 +1,2 @@
+# on your workstation generate a keygen with a type of key and with a comment and enter a passphrase more secure
+ssh-keygen -t ed25519 -C "user default"
