@@ -1,2 +1,17 @@
 # on your workstation generate a keygen with a type of key and with a comment and enter a passphrase more secure
 ssh-keygen -t ed25519 -C "user default"
+enter a paraphrase code
+ssh-copy-id -i ~/.ssh/id_ed25519.pub <Dest_Ip_Address>
+
+# for the ansible keygen
+ssh-keygen -t ed25519 -C "Ansible"
+change the location of the key in order not to overwrite it ~/home/user/ssh/ansible
+no paraphrase
+ssh-copy-id -i ~/.ssh/Ansible.pub <Dest_Ip_Address>
+
+# cache the ssh-key private 
+ssh-add
+
+# alias optimizing 
+alias ssha='eval $(ssh-agent) && ssh-add'
+can be added to bashrc profile in order to make it permanent instead of just the terminal session.
