@@ -3,3 +3,6 @@ sudo apt install ansible
 
 # run the playbook on the specific hostnames/ips given in the cfg with sudo access
 ansible-playbook --ask-become-pass <playbook_name.yml>
+
+# run the module ping on all the servers listed
+ansible all -m ping
