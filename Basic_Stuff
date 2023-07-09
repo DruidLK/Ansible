@@ -6,3 +6,6 @@ ansible-playbook --ask-become-pass <playbook_name.yml>
 
 # run the module ping on all the servers listed
 ansible all -m ping
+
+# get information about the server
+ansible all -m gather_facts
