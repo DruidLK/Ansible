@@ -1,0 +1,21 @@
+- hosts: all // all servers in the ansible.cfg
+  become: true // sudo access
+  tasks:
+
+  - name: install apache 2 and php packages for Ubuntu
+    apt: //module
+      name: //name of the module
+        - apache2
+        - libapache2-mod-php
+      state: latest
+      update_cache: yes
+    when: ansible_distribution == "Ubuntu"
+
+  - name: install apache 2 and php packages for centos
+    dnf: //module
+      name: //name of the module
+        - httpd
+        - php
+      state: latest
+      update_cache: yes
+    when: ansible_distribution == "centos"
